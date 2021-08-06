@@ -1,5 +1,6 @@
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
+import Wrapper from './components/Helpers/Wrapper';
 import { useState } from 'react';
 
 const DUMMY_EXPENSES = [
@@ -31,10 +32,10 @@ function App() {
     setExpenses((prevExpenses) => [expense, ...prevExpenses]);
   };
   return (
-    <div>
+    <Wrapper>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
-    </div>
+    </Wrapper>
   );
 }
 
